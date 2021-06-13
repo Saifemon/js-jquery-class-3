@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSS link -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <title>Javascript & Jquery!</title>
+  </head>
+  <body>
+
+  	<!--navbar start-->
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">Navbar</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navtoggle" aria-controls="navtoggle" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navtoggle">
+	      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+	        <li class="nav-item m-3">
+	          <a class="nav-link active" aria-current="page" href="#">Interactions</a>
+	        </li>
+
+	        <li class="nav-item m-3">
+	          <a class="nav-link" aria-current="page" href="#">Widgets-1</a>
+	        </li>
+
+	        <li class="nav-item m-3">
+	          <a class="nav-link" aria-current="page" href="#">Widgets-2</a>
+	        </li>
+
+	        <li class="nav-item m-3">
+	          <a class="nav-link" aria-current="page" href="#">Effects-1</a>
+	        </li>
+
+	        <li class="nav-item m-3">
+	          <a class="nav-link" aria-current="page" href="#">Effects-2</a>
+	        </li>
+
+	        <li class="nav-item m-3">
+	          <a class="nav-link" aria-current="page" href="#">Utilities</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+  	<!--navbar end-->
+
+  	<!--draggable start-->
+  	<div class="container">
+  		<h2 class="text-warning text-center drag">Draggable Element</h2>
+	  	<div id="drag" class="ui-widget-content">
+		  <p>Drag me around</p>
+		</div>
+	</div>
+    <!--Constrain movement along an axis-->
+	<div class="container">
+		<h1 class="text-success text-center">Draggable/Constrain movement</h1>
+
+		<h2 class="text-info text-left">Constrain movement along an axis:</h2>
+		<div id="constrain-1" class="constrain ui-widget-content">
+		  <p>I can be dragged only vertically</p>
+		</div>		 
+		<div id="constrain-2" class="constrain ui-widget-content">
+		  <p>I can be dragged only horizontally</p>
+		</div>
+
+		<h2 class="text-info text-left">Or to within another DOM element:</h2>
+		<div id="containment-wrapper">
+			<div id="constrain-3" class="constrain ui-widget-content">
+			  <p>I'm contained within the box</p>
+			</div>		 
+			<div class="constrain ui-widget-content">
+			  <p id="constrain-4" class="ui-widget-header">I'm contained within my parent</p>
+			</div>
+	    </div>
+	</div>
+	<div class="container">
+		<h1 class="text-success text-center">jquery UI draggable + shortable</h1>
+		<div class="short">
+			<ul>
+			  <li id="drag-short" class="ui-state-highlight">Drag me down</li>
+			</ul>
+			<ul id="sortable">
+			  <li class="ui-state-default">Item 1</li>
+			  <li class="ui-state-default">Item 2</li>
+			  <li class="ui-state-default">Item 3</li>
+			  <li class="ui-state-default">Item 4</li>
+			  <li class="ui-state-default">Item 5</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<h1 class="text-success text-center">Revert the original & helper</h1>
+		<div id="revert" class="ui-widget-content">
+		  <p>Revert the original</p>
+		</div>
+		 
+		<div id="helper" class="ui-widget-content">
+		  <p>Revert the helper</p>
+		</div>
+    </div>
+	<!--draggable end-->
+
+	<!--droppable start-->
+
+	<div class="container">
+		
+			<h2 class="text-warning text-center drag">Droppable Element</h2>
+        <div class="row">
+	        <!--Create targets for draggable elements.-->
+			<h1 class="text-success text-center">Droppable default</h1>
+			<div id="target" class="ui-widget-content">
+			  <p>Drag me to my target</p>
+			</div> 
+			<div id="droppable-1" class="ui-widget-header">
+			  <p>Drop here</p>
+			</div>
+		</div>
+	</div>
+	<!--droppable accept-->
+	<div class="container">
+		<div class="row">
+			<h1 class="text-success text-center">Droppable accept</h1>
+			<div id="drag-nonvalid" class="ui-widget-content">
+			  <p>I&apos;m draggable but can&apos;t be dropped</p>
+			</div>
+			 
+			<div id="accept" class="ui-widget-content">
+			  <p>Drag me to my target</p>
+			</div>
+			 
+			<div id="accept-drop" class="ui-widget-header">
+			  <p>accept: &apos;#draggable&apos;</p>
+			</div>
+		</div>
+	</div>
+
+	<!--droppable prevent propagation-->
+	<div class="container margin">
+		<h1 class="text-success text-center">droppable prevent propagation</h1>
+		<div id="drag-2" class="ui-widget-content">
+		  <p>Drag me to my target</p>
+		</div>
+		 
+		<div id="drop-1-1" class="ui-widget-header">
+		  <p>Outer droppable</p>
+		  <div id="drop-1-1-inner" class="ui-widget-header">
+		    <p>Inner droppable (not greedy)</p>
+		  </div>
+		</div>
+		 
+		<div id="drop-1-2" class="ui-widget-header">
+		  <p>Outer droppable</p>
+		  <div id="drop-1-2-inner" class="ui-widget-header">
+		    <p>Inner droppable (greedy)</p>
+		  </div>
+		</div>
+	</div>
+	<!--droppable end-->
+
+	<!--resize start-->
+	<section>
+		<div class="container">
+			<h2 class="text-warning text-center drag">Resize Element</h2>
+			<!--animation resize-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Animation Resize</h1>
+				<div id="resizable1" class="ui-widget-content">
+				  <h3 class="ui-widget-header">Animate</h3>
+				</div>
+			</div>
+			<!--constrain resize area-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Constrain Resize</h1>
+				<div id="cont" class="ui-widget-content">
+				  <h3 class="ui-widget-header">Containment</h3>
+				  <div id="resizable2" class="ui-state-active">
+				    <h3 class="ui-widget-header">Resizable</h3>
+				  </div>
+				</div>
+			</div>
+			<!--maximum and minimum size-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Maximum & Minimum size</h1>
+				<div id="resizable3" class="ui-widget-content">
+				  <h3 class="ui-widget-header">Resize larger / smaller</h3>
+				</div>
+			</div>
+			<!--snap to grid reize-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Snap to grid reize</h1>
+				<div id="resizable4" class="ui-widget-content">
+				  <h3 class="ui-widget-header">Grid</h3>
+				</div>
+			</div>
+			<!--textarea resize-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Textarea reize</h1>
+				<textarea id="resizable5" rows="5" cols="20"></textarea>
+			</div>
+
+		</div>
+	</section>
+	<!--resize end-->
+
+	<!--selectable start-->
+	<section>
+		<div class="container">
+			<h2 class="text-warning text-center drag">Selectable Element</h2>
+			<!-- selectable default-->
+			<div class="col-12">
+				<h1 class="text-success text-center">Selectable default</h1>
+				<ol id="selectable1">
+				  <li class="ui-widget-content">Item 1</li>
+				  <li class="ui-widget-content">Item 2</li>
+				  <li class="ui-widget-content">Item 3</li>
+				  <li class="ui-widget-content">Item 4</li>
+				  <li class="ui-widget-content">Item 5</li>
+				  <li class="ui-widget-content">Item 6</li>
+				  <li class="ui-widget-content">Item 7</li>
+				</ol>
+			</div>
+			<!-- selectable serialized-->
+			<div class="col-12">
+				<h1 class="text-success text-center">Selectable Serialized</h1>
+				<p id="feedback">
+				<span>You&apos;ve selected:</span> <span id="select-result">none</span>.
+				</p>
+				 
+				<ol id="selectable2">
+				  <li class="ui-widget-content">Item 1</li>
+				  <li class="ui-widget-content">Item 2</li>
+				  <li class="ui-widget-content">Item 3</li>
+				  <li class="ui-widget-content">Item 4</li>
+				  <li class="ui-widget-content">Item 5</li>
+				  <li class="ui-widget-content">Item 6</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+	<!--selectable end-->
+
+	<!--Sortable element start-->
+	<section>
+		<div class="container">
+			<h2 class="text-warning text-center drag">Sortable element</h2>
+			<!--sortable default-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Sortable Default</h1>
+				<ul id="sortable1">
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+				  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+				</ul>
+			</div>
+			<!--sortable contact list-->
+			<div class="col-12 mb-5">
+				<h1 class="text-success text-center">Sortable Contact list</h1>
+				<ul id="sortable2" class="connectedSortable">
+				  <li class="ui-state-default">Item 1</li>
+				  <li class="ui-state-default">Item 2</li>
+				  <li class="ui-state-default">Item 3</li>
+				  <li class="ui-state-default">Item 4</li>
+				  <li class="ui-state-default">Item 5</li>
+				</ul>
+				 
+				<ul id="sortable2-1" class="connectedSortable">
+				  <li class="ui-state-highlight">Item 1</li>
+				  <li class="ui-state-highlight">Item 2</li>
+				  <li class="ui-state-highlight">Item 3</li>
+				  <li class="ui-state-highlight">Item 4</li>
+				  <li class="ui-state-highlight">Item 5</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!--Shortable element end-->
+
+
+
+    <!-- JS links -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
